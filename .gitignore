@@ -1,0 +1,6 @@
+.env
+
+/grafana/*
+/influxdb/*
+/app/log
+/app/main

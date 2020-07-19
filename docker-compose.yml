@@ -1,0 +1,36 @@
+version: "3"
+
+networks:
+  grafana:
+
+services:
+  grafana:
+    image: grafana/grafana:7.0.4
+    container_name: grafana_monitor_grafana
+    user: "${UID}:${GID}"
+    ports:
+      - 3000:3000
+    volumes:
+      - ./grafana:/var/lib/grafana
+    networks:
+      - grafana
+
+  app:
+    build: ./app
+    container_name: grafana_monitor_app
+    ports:
+      - 8081:80
+    volumes:
+      - ./app/log:/var/log
+    networks:
+      - grafana
+
+  db:
+    image: influxdb:1.8.1
+    container_name: grafana_monitor_db
+    ports:
+      - 8086:8086
+    volumes:
+      - ./influxdb:/var/lib/influxdb
+    networks:
+      - grafana
