@@ -27,19 +27,19 @@ type User struct {
 
 type NewestEvents struct {
 	Hu struct {
-		Val       int       `json:"val"`
+		Val       float64   `json:"val"`
 		CreatedAt time.Time `json:"created_at"`
 	} `json:"hu"`
 	Il struct {
-		Val       int       `json:"val"`
+		Val       float64   `json:"val"`
 		CreatedAt time.Time `json:"created_at"`
 	} `json:"il"`
 	Mo struct {
-		Val       int       `json:"val"`
+		Val       float64   `json:"val"`
 		CreatedAt time.Time `json:"created_at"`
 	} `json:"mo"`
 	Te struct {
-		Val       int       `json:"val"`
+		Val       float64   `json:"val"`
 		CreatedAt time.Time `json:"created_at"`
 	} `json:"te"`
 }
