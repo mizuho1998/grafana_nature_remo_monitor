@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/influxdata/influxdb-client-go"
 	"github.com/joho/godotenv"
 	"github.com/mizuho1998/grafana_monitor/app/remo_api"
@@ -28,6 +29,7 @@ func main() {
 	ticker := time.NewTicker(time.Second * 30)
 	defer ticker.Stop()
 	for {
+		fmt.Println("do")
 		select {
 		case <-ticker.C:
 			instantaneous, updateAt, err := remo_api.GetInstantaneous()
