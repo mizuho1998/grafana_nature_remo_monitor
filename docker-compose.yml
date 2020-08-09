@@ -5,6 +5,7 @@ networks:
 
 services:
   grafana:
+    restart: always
     image: grafana/grafana:7.0.4
     container_name: grafana_monitor_grafana
     user: "${UID}:${GID}"
@@ -16,6 +17,7 @@ services:
       - grafana
 
   app:
+    restart: always
     build: ./app
     container_name: grafana_monitor_app
     ports:
@@ -26,6 +28,7 @@ services:
       - grafana
 
   db:
+    restart: always
     image: influxdb:1.8.1
     container_name: grafana_monitor_db
     ports:
